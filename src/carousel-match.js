@@ -2,10 +2,6 @@ import React from 'react';
 import Carousel from './carousel';
 import { TweenLite } from 'gsap';
 
-import Shopling from './shopling';
-
-import Ga from '../functions/Ga';
-
 export default class CarouselMatch extends React.Component {
 
 	constructor() {
@@ -40,12 +36,9 @@ export default class CarouselMatch extends React.Component {
 
 			} else {
 				return (
-					<Shopling
-						action="comboShopBottom"
-						key={key}
-						link={val.link}
-						img={val.image}
-					/>
+					<a key={key} href={val.link} target="_blank">
+						<img src={val.image} />
+					</a>
 				);
 			}
 		});
@@ -71,13 +64,9 @@ export default class CarouselMatch extends React.Component {
 		const mainSlideImgaes = this.props.data.map((val,key) => {
 			// if (this.props.linkTop) {
 				return (
-					<Shopling
-						style={{padding:10}}
-						action="comboShopTop"
-						key={key}
-						link={val.main.link}
-						img={val.main.image}
-					/>
+					<a key={key} href={val.main.link} target="_blank">
+						<img src={val.main.image} />
+					</a>
 				);
 			// } else {
 			// 	return (
