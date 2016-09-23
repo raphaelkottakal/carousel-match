@@ -10,19 +10,11 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _carousel = require('./carousel');
+var _carousel = require('./src/carousel');
 
 var _carousel2 = _interopRequireDefault(_carousel);
 
 var _gsap = require('gsap');
-
-var _shopling = require('./shopling');
-
-var _shopling2 = _interopRequireDefault(_shopling);
-
-var _Ga = require('../functions/Ga');
-
-var _Ga2 = _interopRequireDefault(_Ga);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -72,12 +64,11 @@ var CarouselMatch = function (_React$Component) {
 				if (_this2.props.linkTop) {
 					return _react2.default.createElement('img', { key: key, style: { width: '100%', height: 'auto', padding: 10 }, src: val.image });
 				} else {
-					return _react2.default.createElement(_shopling2.default, {
-						action: 'comboShopBottom',
-						key: key,
-						link: val.link,
-						img: val.image
-					});
+					return _react2.default.createElement(
+						'a',
+						{ key: key, href: val.link, target: '_blank' },
+						_react2.default.createElement('img', { src: val.image })
+					);
 				}
 			});
 
@@ -104,13 +95,11 @@ var CarouselMatch = function (_React$Component) {
 
 			var mainSlideImgaes = this.props.data.map(function (val, key) {
 				// if (this.props.linkTop) {
-				return _react2.default.createElement(_shopling2.default, {
-					style: { padding: 10 },
-					action: 'comboShopTop',
-					key: key,
-					link: val.main.link,
-					img: val.main.image
-				});
+				return _react2.default.createElement(
+					'a',
+					{ key: key, href: val.main.link, target: '_blank' },
+					_react2.default.createElement('img', { src: val.main.image })
+				);
 				// } else {
 				// 	return (
 				// 		<img key={key} style={{width: '100%', height: 'auto', display: 'block'}} src={val.main.image} />

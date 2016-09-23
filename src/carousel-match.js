@@ -1,5 +1,5 @@
 import React from 'react';
-import Carousel from './carousel';
+import Carousel from './src/carousel';
 import { TweenLite } from 'gsap';
 
 export default class CarouselMatch extends React.Component {
